@@ -300,6 +300,16 @@ public:
   int& surface() { return surface_; }
   const int& surface() const { return surface_; }
 
+  // Accessors for time (units are seconds).
+  double& time() { return time_; }
+  const double& time() const { return time_; }
+  double& time_last() { return time_last_; }
+  const double& time_last() const { return time_last_; }
+
+  // Accessors for speed (cm/s).
+  double& speed() { return speed_; }
+  const double& speed() const { return speed_; }
+
   // Boundary information
   BoundaryInfo& boundary() { return boundary_; }
 
@@ -336,6 +346,11 @@ private:
                             //!< current tallies
   Position r_last_;         //!< previous coordinates
   Direction u_last_;        //!< previous direction coordinates
+
+  double time_;      //!< time
+  double time_last_; //!< previous time
+
+  double speed_;
 
   int surface_ {0}; //!< index for surface particle is on
 

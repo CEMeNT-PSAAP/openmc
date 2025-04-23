@@ -42,7 +42,7 @@ namespace openmc {
 // Particle implementation
 //==============================================================================
 
-double Particle::speed() const
+double Particle::get_speed() const
 {
   // Multigroup speed?
   if (!settings::run_CE) {
@@ -158,6 +158,8 @@ void Particle::event_calculate_xs()
   u_last() = u();
   r_last() = r();
   time_last() = time();
+
+  speed() = get_speed();
 
   // Reset event variables
   event() = TallyEvent::KILL;
