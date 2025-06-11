@@ -199,7 +199,7 @@ void Particle::event_calculate_xs()
     
     // Calculate speed for MG mode
     if (!settings::run_CE) {
-      this->speed() = 0.0;
+      this->speed() = this->get_speed();
     }
   }
 
